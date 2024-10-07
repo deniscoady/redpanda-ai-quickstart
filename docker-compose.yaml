@@ -138,3 +138,6 @@ services:
     depends_on:
       - postgres
       - redpanda
+      - qdrant
+      - neo4j
+      - ollama
