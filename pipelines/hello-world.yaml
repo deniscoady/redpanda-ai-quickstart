@@ -1,0 +1,13 @@
+# benthos.yaml
+# Config fields, showing default values
+input:
+  generate:
+    mapping: root = now()
+    interval: 1s
+    count: 30
+    batch_size: 1
+    auto_replay_nacks: true
+
+output:
+  stdout:
+    codec: lines
