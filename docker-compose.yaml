@@ -14,8 +14,32 @@ services:
       - redpanda_ai_network
     environment:
       POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
     ports:
       - 5432:5432
+
+  pgadmin4:
+    container_name: pgadmin
+    image: dpage/pgadmin4:latest
+    restart: unless-stopped
+    entrypoint:
+      - sh
+      - -c
+      - |
+        echo '{ "Servers": { "1": { "Group": "Servers", "Name": "Docker", "Host": "postgres", "Port": 5432, "MaintenanceDB": "postgres", "Username": "postgres", "Password": "postgres", "SSLMode": "prefer", "Favorite": true } } }' > /tmp/servers.json &&
+        /entrypoint.sh
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@redpanda.com # unused, required placeholder
+      PGADMIN_DEFAULT_PASSWORD: password        # unused, required placeholder
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
+      PGADMIN_SERVER_JSON_FILE: /tmp/servers.json
+    networks:
+      - redpanda_ai_network
+    ports:
+      - 5050:80
+    depends_on:
+      - postgres
 
   qdrant:
     container_name: qdrant
@@ -44,9 +68,6 @@ services:
       - redpanda_ai_network
     deploy:
       resources:
-        limits:
-          memory: 8G
-
         reservations:
           devices:
             - capabilities: [gpu]
@@ -139,5 +160,5 @@ services:
       - postgres
       - redpanda
       - qdrant
-      - neo4j
+      # - neo4j
       - ollama
