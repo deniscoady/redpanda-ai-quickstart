@@ -1,5 +1,5 @@
-[!NOTE]
-Disclaimer: This project is an unofficial community-driven effort and is not affiliated with, endorsed by, or supported by Redpanda. While we strive to provide useful tools and documentation, please note that this repository is maintained independently and does not receive any official support or guarantees from Redpanda or its team. For official documentation and support, please refer to Redpanda's official resources.
+> [!NOTE]
+> Disclaimer: This project is an unofficial community-driven effort and is not affiliated with, endorsed by, or supported by Redpanda. While we strive to provide useful tools and documentation, please note that this repository is maintained independently and does not receive any official support or guarantees from Redpanda or its team. For official documentation and support, please refer to Redpanda's official resources.
 
 # Redpanda AI Quickstart - README
 
