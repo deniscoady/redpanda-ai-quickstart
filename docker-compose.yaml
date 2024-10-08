@@ -147,7 +147,7 @@ services:
   connect:
     container_name: connect
     build: 
-      context: ./connect
+      context: ./docker/connect
     volumes:
       - ./pipelines/:/pipelines/
     command:
