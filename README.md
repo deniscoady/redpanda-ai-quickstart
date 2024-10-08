@@ -1,10 +1,13 @@
+> [!NOTE]
+> Disclaimer: This project is an unofficial community-driven effort and is not affiliated with, endorsed by, or supported by Redpanda. While we strive to provide useful tools and documentation, please note that this repository is maintained independently and does not receive any official support or guarantees from Redpanda or its team. For official documentation and support, please refer to Redpanda's official resources.
+
 # Redpanda AI Quickstart - README
 
 This README provides an overview of the services included in the `redpanda-ai-quickstart` docker-compose setup. Each service's functionality, ports exposed, and links to web user interfaces are described for easier management.
 
 - [Redpanda AI Quickstart - README](#redpanda-ai-quickstart---readme)
   - [PostgreSQL (EnterpriseDB)](#postgresql-enterprisedb)
-    - [PgAdmin 4](#pgadmin-4)
+    - [pgAdmin 4](#pgadmin-4)
   - [Qdrant](#qdrant)
   - [Neo4j](#neo4j)
   - [Ollama](#ollama)
@@ -72,6 +75,10 @@ Open WebUI serves as a frontend interface to interact with the Ollama service, p
 
 ## Redpanda
 
+> [!NOTE]
+> [Redpanda Connect](https://www.redpanda.com/connect) requires an Enterprise agreement to use AI functionality. Please ensure you have an active Connect entitlement with Redpanda Data, Inc. before using it in a production capacity.
+
+
 Redpanda is a high-performance streaming platform that supports Kafka APIs, allowing you to build streaming architectures without the complexity of managing ZooKeeper.
 
 - **Service**: Redpanda
@@ -84,6 +91,17 @@ Redpanda is a high-performance streaming platform that supports Kafka APIs, allo
 ### Redpanda Console
 
 Redpanda Console provides a web-based UI for managing Redpanda clusters. You can monitor brokers, topics, partitions, and messages.
+
+- **Service**: Redpanda Console
+- **Exposed Port**: `8080` (Web UI)
+- **Web UI**: [http://localhost:8080](http://localhost:8080)
+
+### Redpanda Connect
+Redpanda Connect features a huge collection of sources, sinks, and processors to power any real-time data and AI pipelines. Create new connectors with ease, with multiple plug-in strategies, including native Go and your favorite Wasm-supported language. Use in Redpanda Cloud, run the Apache 2.0 licensed connectors for free, or pay for expert support.
+
+> [!NOTE]
+> [Redpanda Connect](https://www.redpanda.com/connect) requires an Enterprise agreement to use AI functionality. Please ensure you have an active Connect entitlement with Redpanda Data, Inc. before using it in a production capacity.
+
 
 - **Service**: Redpanda Console
 - **Exposed Port**: `8080` (Web UI)
