@@ -25,26 +25,33 @@ To get started with the `redpanda-ai-quickstart`, follow these steps:
 1. **Prerequisites**: Ensure you have the following installed:
    - [Docker](https://www.docker.com/get-started)
    - [Docker Compose](https://docs.docker.com/compose/install/)
+  
+2. Install Docker Compose (if not installed)
+   ```
+   sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+   sudo chmod +x /usr/local/bin/docker-compose
+   docker-compose version
+   ```
 
-2. **Clone the Repository**:
+4. **Clone the Repository**:
    Open a terminal and run the following command to clone the repository:
    ```
    git clone https://github.com/yourusername/redpanda-ai-quickstart.git
    ```
 
-3. **Navigate to the Project Directory**:
+5. **Navigate to the Project Directory**:
    Change into the project directory:
    ```
    cd redpanda-ai-quickstart
    ```
 
-4. **Start the Services**:
+6. **Start the Services**:
    Use Docker Compose to start all the services defined in the `docker-compose.yml` file:
    ```
    docker-compose up
    ```
 
-5. **Access the Services**:
+7. **Access the Services**:
    Once the services are up and running, you can access their web interfaces through your browser using the following URLs:
    - PostgreSQL: [http://localhost:5050](http://localhost:5050) (pgAdmin)
    - Qdrant: [http://localhost:6333/dashboard](http://localhost:6333/dashboard)
