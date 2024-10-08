@@ -36,7 +36,7 @@ To get started with the `redpanda-ai-quickstart`, follow these steps:
 4. **Clone the Repository**:
    Open a terminal and run the following command to clone the repository:
    ```
-   git clone https://github.com/yourusername/redpanda-ai-quickstart.git
+   git clone https://github.com/deniscoady/redpanda-ai-quickstart.git
    ```
 
 5. **Navigate to the Project Directory**:
