@@ -2,40 +2,40 @@
 
 This README provides an overview of the services included in the `redpanda-ai-quickstart` docker-compose setup. Each service's functionality, ports exposed, and links to web user interfaces are described for easier management.
 
-## Table of Contents
+- [Redpanda AI Quickstart - README](#redpanda-ai-quickstart---readme)
+  - [PostgreSQL (EnterpriseDB)](#postgresql-enterprisedb)
+    - [PgAdmin 4](#pgadmin-4)
+  - [Qdrant](#qdrant)
+  - [Neo4j](#neo4j)
+  - [Ollama](#ollama)
+    - [Open WebUI](#open-webui)
+  - [Redpanda](#redpanda)
+    - [Redpanda Console](#redpanda-console)
+  - [Port Overview](#port-overview)
 
-1. [PostgreSQL](#postgresql-enterprisedb)
-2. [PgAdmin 4](#pgadmin-4)
-3. [Qdrant](#qdrant)
-4. [Neo4j](#neo4j)
-5. [Ollama](#ollama)
-6. [Open WebUI](#open-webui)
-7. [Redpanda](#redpanda)
-8. [Redpanda Console](#redpanda-console)
-9. [Port Overview](#port-overview)
-
----
 
 ## PostgreSQL (EnterpriseDB)
 
 PostgreSQL is a powerful, open-source object-relational database system used for various data management applications. This deployment uses EnterpriseDB's PostgreSQL image.
 
 - **Service**: PostgreSQL
-- **Exposed Port**: `5432`
+- **Exposed Port**: `5432` (Postgres wire protocol)
 - **Login**: 
   - **Username**: `postgres`
   - **Password**: `postgres`
 
-## PgAdmin 4
+### PgAdmin 4
 
 PgAdmin 4 is a web-based UI management tool for PostgreSQL databases, allowing you to easily visualize and manage PostgreSQL instances.
 
+> [!NOTE]
+> On the first time connecting to the default postgres database you may be prompted to enter a password. This is `postgres`.
+
 - **Service**: PgAdmin 4
-- **Exposed Port**: `5050` (mapped from internal port 80)
+- **Exposed Port**: `5050` (Web UI)
 - **Web UI**: [http://localhost:5050](http://localhost:5050)
-- **Login Credentials**:
-  - **Username**: `admin@redpanda.com`
-  - **Password**: `password`
+
+
 
 ## Qdrant
 
@@ -60,14 +60,14 @@ Neo4j is a graph database management system designed to store and query complex 
 Ollama provides model inference capabilities, designed to run machine learning models efficiently. It is especially useful for AI-based workloads utilizing GPUs.
 
 - **Service**: Ollama
-- **Exposed Port**: `11434`
+- **Exposed Port**: `11434` (HTTP API)
 
-## Open WebUI
+### Open WebUI
 
 Open WebUI serves as a frontend interface to interact with the Ollama service, providing an easy way to manage and test AI models.
 
 - **Service**: Open WebUI
-- **Exposed Port**: `3000` (mapped from internal port 8080)
+- **Exposed Port**: `3000` (Web UI)
 - **Web UI**: [http://localhost:3000](http://localhost:3000)
 
 ## Redpanda
@@ -81,12 +81,12 @@ Redpanda is a high-performance streaming platform that supports Kafka APIs, allo
   - `18081` (Schema Registry External)
   - `9644` (Admin API)
 
-## Redpanda Console
+### Redpanda Console
 
 Redpanda Console provides a web-based UI for managing Redpanda clusters. You can monitor brokers, topics, partitions, and messages.
 
 - **Service**: Redpanda Console
-- **Exposed Port**: `8080`
+- **Exposed Port**: `8080` (Web UI)
 - **Web UI**: [http://localhost:8080](http://localhost:8080)
 
 ---
